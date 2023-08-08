@@ -1,0 +1,61 @@
+@font-face {
+  font-family: digital-7;
+  src: url(./../fonts/digital-7.ttf);
+}
+
+* {
+  font-family: digital-7;
+  box-sizing: border-box;
+  color: red;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: lightgrey;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.clock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 520px;
+  height: 200px;
+  background-color: black;
+  border-radius: 25px;
+  border: 10px solid gray;
+}
+
+.digit-minute {
+  font-size: 200px;
+}
+
+.digit-hour {
+  font-size: 200px;
+}
+
+.digit-dots {
+  margin: -20px;
+  font-size: 200px;
+}
+
+.extra-data {
+  margin-left: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 200px;
+  font-size: 40px;
+}
+
+.extra-day {
+  text-align: center;
+}
+
+.extra-seconds {
+  font-size: 55px;
+}
