@@ -1,52 +1,19 @@
-let day;
-let hour;
-let minute;
-let second;
+import { ClockDate } from "./ClockDate.js";
 
 const fieldDay = document.querySelector('.extra-day')
 const fieldHour = document.querySelector('.digit-hour');
 const fieldMinute = document.querySelector('.digit-minute');
+const fieldSeconds = document.querySelector('.extra-seconds');
 
-const date = new Date();
-
-day = date.getDay();
-day = date.getDay();
-hour = date.getHours();
-minute = date.getMinutes();
-second = date.getSeconds();
-
-const setFormat = (time) => {
-  if (time < 10) {
-    return `0${time}`
-  } else {
-    return `${time}`
-  }
-}
-
-const setDay = (day) => {
-  switch (day) {
-    case 0:
-      return 'SUN';
-    case 1:
-      return 'MON';
-    case 2:
-      return 'TUE';
-    case 3:
-      return 'WED';
-    case 4:
-      return 'THU';
-    case 5:
-      return 'FRI';
-    default:
-      return 'SAT';
-  }
-}
+let actualDate = new Date();
+let clockDate = new ClockDate(actualDate);
 
 
 const showTime = () => {
-  fieldHour.textContent = setFormat(hour);
-  fieldMinute.textContent = setFormat(minute);
-  fieldDay.textContent = setDay(day);
+  fieldHour.textContent = clockDate.getActualHour();
+  fieldMinute.textContent = clockDate.getActualMinutes();
+  fieldDay.textContent = clockDate.getActualDay();
+  fieldSeconds.textContent = clockDate.getActualSeconds();
 }
 
 showTime();
