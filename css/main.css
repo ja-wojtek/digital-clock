@@ -5,7 +5,6 @@
 * {
   font-family: digital-7;
   box-sizing: border-box;
-  color: red;
   padding: 0;
   margin: 0;
 }
@@ -14,6 +13,7 @@ body {
   background-color: lightgrey;
   height: 100vh;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
@@ -22,11 +22,13 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  color: red;
   width: 520px;
   height: 200px;
   background-color: black;
   border-radius: 25px;
   border: 10px solid gray;
+  z-index: -1;
 }
 
 .digit-minute {
@@ -57,4 +59,23 @@ body {
 
 .extra-seconds {
   font-size: 55px;
+}
+
+button {
+  font-size: 20px;
+  padding: 1px 10px;
+  background-color: gray;
+  color: black;
+  border: solid 2px gray;
+  border-radius: 5px 5px 0 0;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: darkgray;
+}
+
+button:active {
+  cursor: pointer;
+  background-color: dimgray;
 }/*# sourceMappingURL=main.css.map */

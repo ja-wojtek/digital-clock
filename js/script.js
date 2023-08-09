@@ -1,17 +1,20 @@
 import { ClockDate } from "./ClockDate.js";
+import { ClockDesign } from "./ClockDesign.js";
 
-const fieldDay = document.querySelector('.extra-day')
-const fieldHour = document.querySelector('.digit-hour');
-const fieldMinute = document.querySelector('.digit-minute');
-const fieldSeconds = document.querySelector('.extra-seconds');
+const buttonColor = document.querySelector('.colorBtn');
+
+let clockDesign = new ClockDesign();
 
 let showTime = () => {
   let actualDate = new Date();
   let clockDate = new ClockDate(actualDate);
-  fieldHour.textContent = clockDate.getActualHour();
-  fieldMinute.textContent = clockDate.getActualMinutes();
-  fieldDay.textContent = clockDate.getActualDay();
-  fieldSeconds.textContent = clockDate.getActualSeconds();
+  clockDate.getActualHour();
+  clockDate.getActualMinutes();
+  clockDate.getActualDay();
+  clockDate.getActualSeconds();
 }
 
 setInterval(showTime, 1000)
+
+
+buttonColor.addEventListener('click', clockDesign.changeFontColor);

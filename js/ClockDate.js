@@ -1,41 +1,46 @@
 export class ClockDate {
   constructor(actualDate) {
     this.actualDate = actualDate;
+
+    this.fieldDay = document.querySelector('.extra-day')
+    this.fieldHour = document.querySelector('.digit-hour');
+    this.fieldMinute = document.querySelector('.digit-minute');
+    this.fieldSeconds = document.querySelector('.extra-seconds');
   }
 
   // Getting number of the day and changing it into three letters
   getActualDay = () => {
     switch (this.actualDate.getDay()) {
       case 0:
-        return 'SUN';
+        return this.fieldDay.textContent = 'SUN';
       case 1:
-        return 'MON';
+        return this.fieldDay.textContent = 'MON';
       case 2:
-        return 'TUE';
+        return this.fieldDay.textContent = 'TUE';
       case 3:
-        return 'WED';
+        return this.fieldDay.textContent = 'WED';
       case 4:
-        return 'THU';
+        return this.fieldDay.textContent = 'THU';
       case 5:
-        return 'FRI';
+        return this.fieldDay.textContent = 'FRI';
       default:
-        return 'SAT';
+        return this.fieldDay.textContent = 'SAT';
     }
   }
 
   // Getting actual hour
   getActualHour = () => {
-    return this.setFormat(this.actualDate.getHours());
+    return this.fieldHour.textContent = this.setFormat(this.actualDate.getHours());
   }
 
   // Getting actual minutes
   getActualMinutes = () => {
-    return this.setFormat(this.actualDate.getMinutes());
+    return this.fieldMinute.textContent = this.setFormat(this.actualDate.getMinutes());
   }
 
   // Getting actual seconds
   getActualSeconds = () => {
-    return this.setFormat(this.actualDate.getSeconds());
+    return this.fieldSeconds.textContent = this.setFormat(this.actualDate.getSeconds());
   }
 
   // Format: Two have always two digits 1 -> 01
