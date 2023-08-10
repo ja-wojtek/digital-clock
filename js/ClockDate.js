@@ -1,16 +1,19 @@
 export class ClockDate {
-  constructor(actualDate) {
+  constructor(actualDate, isHourFormat24) {
     this.actualDate = actualDate;
 
     this.fieldDay = document.querySelector('.extra-day')
     this.fieldHour = document.querySelector('.digit-hour');
+    this.fieldHour12 = document.querySelector('.digit-hour-12');
     this.fieldMinute = document.querySelector('.digit-minute');
     this.fieldSeconds = document.querySelector('.extra-seconds');
+    this.fieldDate = document.querySelector('.date');
+    this.isHourFormat24 = isHourFormat24;
   }
 
   // Getting number of the day and changing it into three letters
   getActualDay = () => {
-    switch (this.actualDate.getDay()) {
+    switch (this.actualDate.getActualDayNumber) {
       case 0:
         return this.fieldDay.textContent = 'SUN';
       case 1:
@@ -28,9 +31,40 @@ export class ClockDate {
     }
   }
 
-  // Getting actual hour
+
+  // Getting actual year
+  getActualYear = () => {
+    return this.actualDate.getFullYear();
+  }
+
+  // Getting actual month
+  getActualMonth = () => {
+    return this.actualDate.getMonth() + 1;
+  }
+
+  // Getting actual day (number)
+  getActualDayNumber = () => {
+    return this.actualDate.getDate();
+  }
+
+  showFullDate = () => {
+    return this.fieldDate.textContent = `${this.setFormat(this.getActualDayNumber())}/${this.setFormat(this.getActualMonth())}/${this.getActualYear()}`;
+  }
+
+  // Getting actual hour 24h format
   getActualHour = () => {
     return this.fieldHour.textContent = this.setFormat(this.actualDate.getHours());
+  }
+
+  // Getting actual hour 12h format
+  getActualHour12 = () => {
+    let tempHour = this.actualDate.getHours();
+    if (tempHour > 12) {
+      return this.fieldHour12.textContent = this.setFormat(tempHour - 12);
+    }
+    else {
+      return this.fieldHour12.textContent = this.setFormat(tempHour);
+    }
   }
 
   // Getting actual minutes
@@ -51,4 +85,5 @@ export class ClockDate {
       return `${time}`
     }
   }
+
 }

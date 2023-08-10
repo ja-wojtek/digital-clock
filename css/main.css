@@ -32,10 +32,16 @@ body {
 }
 
 .digit-minute {
+  z-index: -2;
   font-size: 200px;
 }
 
 .digit-hour {
+  font-size: 200px;
+}
+
+.digit-hour-12 {
+  display: none;
   font-size: 200px;
 }
 
@@ -72,15 +78,15 @@ button {
 
 button:hover {
   cursor: pointer;
-  background-color: darkgray;
 }
 
 button:active {
+  transform: translateY(5px);
   cursor: pointer;
-  background-color: dimgray;
 }
 
 .am {
+  display: none;
   font-size: 20px;
   position: fixed;
   transform: translateX(5px) translateY(-5px);
@@ -88,7 +94,14 @@ button:active {
 
 .pm {
   display: none;
-  font-size: 20px;
   position: fixed;
   transform: translateX(30px) translateY(-5px);
+  font-size: 20px;
+}
+
+.date {
+  display: none;
+  position: fixed;
+  transform: translateY(-75px);
+  font-size: 12px;
 }/*# sourceMappingURL=main.css.map */
