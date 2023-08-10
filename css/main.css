@@ -78,4 +78,17 @@ button:hover {
 button:active {
   cursor: pointer;
   background-color: dimgray;
+}
+
+.am {
+  font-size: 20px;
+  position: fixed;
+  transform: translateX(5px) translateY(-5px);
+}
+
+.pm {
+  display: none;
+  font-size: 20px;
+  position: fixed;
+  transform: translateX(30px) translateY(-5px);
 }/*# sourceMappingURL=main.css.map */
